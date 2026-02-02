@@ -7,7 +7,7 @@ function Feed({ user }) {
   const fetchPosts = async () => {
     try {
       const res = await fetch(
-        "http://localhost:5000/api/posts?page=1&limit=5"
+        "https://mini-social-backend-lzfb.onrender.com/api/posts?page=1&limit=5"
       );
       const data = await res.json();
       setPosts(data.posts || []);
@@ -22,7 +22,7 @@ function Feed({ user }) {
   }, []);
 
   const handleLike = async (postId) => {
-    await fetch(`http://localhost:5000/api/posts/${postId}/like`, {
+    await fetch(`https://mini-social-backend-lzfb.onrender.com/api/posts/${postId}/like`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username: user.username }),
@@ -34,7 +34,7 @@ function Feed({ user }) {
   const handleComment = async (postId, text, clearInput) => {
     if (!text) return;
 
-    await fetch(`http://localhost:5000/api/posts/${postId}/comment`, {
+    await fetch(`https://mini-social-backend-lzfb.onrender.com/api/posts/${postId}/comment`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

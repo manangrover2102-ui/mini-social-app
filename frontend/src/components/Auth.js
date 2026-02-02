@@ -10,8 +10,8 @@ function Auth({ onAuthSuccess }) {
     e.preventDefault();
 
     const url = isLogin
-      ? "http://localhost:5000/api/auth/login"
-      : "http://localhost:5000/api/auth/signup";
+      ? "https://mini-social-backend-lzfb.onrender.com/api/auth/login"
+      : "https://mini-social-backend-lzfb.onrender.com/api/auth/signup";
 
     const body = isLogin
       ? { email, password }
